@@ -1,7 +1,20 @@
 # JobPortal
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
+
 Link website:https://job-portal-application.vercel.app/
+
+account test
+employer
+  username: label0
+  password:label0123456
+jobseeker:
+  username:Narsing123@gmail.com
+  password:8208741361
+
+
+create new account employer : password = username + password
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
