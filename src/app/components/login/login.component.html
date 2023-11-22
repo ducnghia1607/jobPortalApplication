@@ -1,0 +1,47 @@
+<div class="w-[800px] h-2/3 mx-auto shadow-lg flex rounded-lg">
+  <div
+    class="w-1/2 flex flex-col items-center space-y-6 justify-center rounded-l-lg"
+  >
+    <h1 class="text-4xl font-bold text-black">Sign In</h1>
+    <form action="" class="w-full flex flex-col items-center space-y-6">
+      <input
+        type="text"
+        placeholder="Email"
+        class="w-3/4 text-xl rounded-md bg-slate-50 outline-none border-none px-6 py-4 shadow"
+        name="username"
+        [(ngModel)]="account.UserName"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        class="w-3/4 text-xl rounded-md bg-slate-50 outline-none border-none px-6 py-4 shadow"
+        name="password"
+        [(ngModel)]="account.Password"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </form>
+
+    <button
+      class="btn bg-red-500 text-white text-xl rounded-full font-bold py-4 px-10"
+      (click)="login()"
+    >
+      Sign in
+    </button>
+  </div>
+
+  <div
+    class="w-1/2 bg-rose-600 flex flex-col justify-center items-center space-y-4 rounded-r-lg"
+  >
+    <h1 class="text-4xl font-bold text-white">Hello,Friend</h1>
+    <p class="text-xl text-white text-center">
+      Enter your personal details and start journey with us
+    </p>
+    <button
+      class="border-2 border-white px-6 py-3 text-2xl font-semibold text-white rounded-full"
+      routerLink="/register"
+    >
+      Sign up
+    </button>
+  </div>
+</div>

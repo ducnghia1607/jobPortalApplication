@@ -1,0 +1,64 @@
+<!--Container-->
+<div class="container w-full md:w-4/5 xl:w-3/5 mx-auto px-2">
+  <!--Title-->
+  <h1
+    class="flex items-center font-sans font-bold break-normal text-indigo-500 px-2 py-8 text-xl md:text-2xl"
+  >
+    My Created Job
+  </h1>
+
+  <!--Card-->
+  <div id="recipients" class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
+    <table
+      id="example"
+      class="stripe hover"
+      style="width: 100%; padding-top: 1em; padding-bottom: 1em"
+    >
+      <thead>
+        <tr>
+          <th data-priority="1">STT</th>
+          <th data-priority="2">Job name</th>
+          <th data-priority="3">Category Name</th>
+          <th data-priority="4">Experience</th>
+          <th data-priority="5">Package</th>
+          <th data-priority="6">Location</th>
+          <th data-priority="7">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let job of jobList; let i = index">
+          <td class="text-center">{{ i + 1 }}</td>
+          <td class="text-center">{{ job.jobName }}</td>
+          <td class="text-center">{{ job.categoryName }}</td>
+          <td class="text-center">{{ job.experience }}</td>
+          <td class="text-center">{{ job.package }}</td>
+          <td class="text-center">{{ job.location }}</td>
+          <td class="flex justify-center items-center">
+            <button
+              [routerLink]="['/jobs', job.jobId]"
+              class="btn px-3 py-1 rounded-full text-lg text-green-500 my-0 mx-auto hover:opacity-60"
+            >
+              <i class="fa-regular fa-eye"></i>
+            </button>
+
+            <button
+              [routerLink]="['/updatejob', job.jobId]"
+              class="btn px-3 py-1 rounded-full text-lg text-yellow-400 my-0 mx-auto hover:opacity-60"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+
+            <button
+              (click)="deleteJob(job.jobId)"
+              class="btn px-3 py-1 rounded-full text-lg text-red-500 my-0 mx-auto hover:opacity-60"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--/Card-->
+</div>
+<!--/container-->

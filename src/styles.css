@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* .bg-register {
+    background-color: #eec0c6;
+    background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
+  } */
+
+  .form-control {
+    @apply text-xl flex flex-col;
+  }
+
+  .form-control input {
+    @apply border-2  rounded-sm outline-none py-2 px-4;
+  }
+
+  .btn {
+    @apply px-4 py-2 text-xl rounded-lg text-white;
+  }
+}

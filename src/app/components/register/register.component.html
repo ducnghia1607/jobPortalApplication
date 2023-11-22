@@ -1,0 +1,121 @@
+<div class="w-[800px] mx-auto shadow-md rounded-lg px-10 py-10 bg-register">
+  <div class="mb-10 flex justify-center">
+    <button
+      class="btn rounded-r-none"
+      [ngClass]="!isEmployer ? 'bg-green-500' : 'bg-blue-500'"
+      (click)="isEmployer = false"
+    >
+      Register As A Job Seeker
+    </button>
+    <button
+      class="btn rounded-l-none"
+      [ngClass]="isEmployer ? 'bg-green-500' : 'bg-blue-500'"
+      (click)="isEmployer = true"
+    >
+      Register As An Employer
+    </button>
+  </div>
+
+  <form
+    action=""
+    *ngIf="isEmployer"
+    class="grid grid-cols-2 gap-4"
+    [formGroup]="employerForm"
+  >
+    <div class="form-control">
+      <input type="text" formControlName="CompanyName" />
+      <label for="">Company Name</label>
+    </div>
+    <div class="form-control">
+      <input type="email" formControlName="EmailId" />
+      <label for="">Email</label>
+    </div>
+
+    <div class="form-control">
+      <input type="text" formControlName="MobileNo" />
+      <label for="">Mobile</label>
+    </div>
+    <div class="form-control">
+      <input type="text" formControlName="PhoneNo" />
+      <label for="">Phone</label>
+    </div>
+
+    <div class="form-control">
+      <input type="text" formControlName="GstNo" />
+      <label for="">Username</label>
+    </div>
+
+    <div class="form-control">
+      <input type="text" formControlName="PinCode" />
+      <label for="">Password</label>
+    </div>
+
+    <div class="form-control">
+      <input type="text" formControlName="LogoURL" />
+      <label for="">LogoURL</label>
+    </div>
+
+    <div class="form-control">
+      <input type="text" formControlName="City" />
+      <label for="">City</label>
+    </div>
+
+    <div class="form-control">
+      <input type="text" formControlName="State" />
+      <label for="">State</label>
+    </div>
+
+    <div class="form-control">
+      <input type="text" formControlName="CompanyAddress" />
+      <label for="">Company Address</label>
+    </div>
+  </form>
+
+  <form
+    action=""
+    *ngIf="!isEmployer"
+    class="grid grid-cols-2 gap-4"
+    [formGroup]="jobseekerForm"
+  >
+    <div class="form-control">
+      <input type="text" formControlName="FullName" />
+      <label for="">FullName</label>
+    </div>
+    <div class="form-control">
+      <select
+        name=""
+        id=""
+        class="outline-none py-2 border-2 rounded-md"
+        formControlName="ExperienceStatus"
+      >
+        <option selected for="">ExperienceStatus</option>
+
+        <option value="Fresher">Fresher</option>
+        <option value="Junior">Junior</option>
+        <option value="Senior">Senior</option>
+      </select>
+    </div>
+    <div class="form-control">
+      <input type="email" formControlName="EmailId" />
+      <label for="">Username</label>
+    </div>
+
+    <div class="form-control">
+      <input type="text" formControlName="MobileNo" />
+      <label for="">Password</label>
+    </div>
+
+    <div class="form-control">
+      <input type="text" formControlName="ResumeUrl" />
+      <label for="">ResumeUrl</label>
+    </div>
+  </form>
+  <div class="w-full">
+    <button
+      class="btn bg-green-500 mx-auto my-8 w-32 flex justify-center"
+      (click)="onRegister()"
+    >
+      Register
+    </button>
+  </div>
+</div>

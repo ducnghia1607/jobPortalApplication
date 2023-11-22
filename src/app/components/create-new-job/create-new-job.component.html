@@ -1,0 +1,91 @@
+<h1 class="text-3xl font-bold mb-4">Create New Job Post</h1>
+<form action="" class="flex flex-col space-y-6 w-1/2" [formGroup]="newJob">
+  <div class="form-control">
+    <input
+      type="text"
+      class="focus:outline-none focus:ring focus:border-blue-500 rounded-sm shadow"
+      formControlName="JobName"
+    />
+    <label for="">Job Title</label>
+  </div>
+  <div class="flex justify-between">
+    <div class="form-control">
+      <select
+        name=""
+        id=""
+        class="focus:outline-none focus:ring focus:border-blue-500 rounded-sm shadow p-4"
+        formControlName="CategoryId"
+      >
+        <option
+          *ngFor="let category of jobCategory"
+          value="{{ category.jobCategoryId }}"
+        >
+          {{ category.categoryName }}
+        </option>
+      </select>
+      <label for="">Select Category</label>
+    </div>
+
+    <div class="form-control">
+      <select
+        name=""
+        id=""
+        class="focus:outline-none focus:ring focus:border-blue-500 p-4 rounded-sm shadow"
+        formControlName="Experience"
+      >
+        <option value="Fresher">Fresher</option>
+        <option value="Junior">Junior</option>
+        <option value="Senior">Senior</option>
+      </select>
+      <label for="">Select Job Category</label>
+    </div>
+  </div>
+
+  <div class="flex justify-between">
+    <div class="form-control">
+      <input
+        type="text"
+        class="focus:outline-none focus:ring focus:border-blue-500"
+        formControlName="Package"
+      />
+      <label for="">Package</label>
+    </div>
+
+    <div class="form-control">
+      <input
+        type="text"
+        class="focus:outline-none focus:ring focus:border-blue-500"
+        formControlName="Location"
+      />
+      <label for="">Location</label>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <textarea
+      name=""
+      id=""
+      cols="30"
+      rows="3"
+      class="focus:outline-none focus:ring focus:border-blue-500 p-2 shadow"
+      formControlName="JobDescription"
+    ></textarea>
+    <label for="" class="text-xl">Job description</label>
+  </div>
+</form>
+
+<button
+  *ngIf="!isUpdate"
+  (click)="createJob()"
+  class="text-2xl font-medium text-white bg-sky-500 hover:opacity-60 mx-auto px-4 py-2 rounded-full mt-6"
+>
+  Create Job
+</button>
+
+<button
+  *ngIf="isUpdate"
+  (click)="updateJob()"
+  class="text-2xl font-medium text-white bg-green-500 hover:opacity-60 mx-auto px-4 py-2 rounded-full mt-6"
+>
+  Update Job
+</button>
