@@ -5,9 +5,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Link website:https://job-portal-application.vercel.app/
 
 account test
+
 employer
   username: label0
   password:label0123456
+
+
 jobseeker:
   username:Narsing123@gmail.com
   password:8208741361
